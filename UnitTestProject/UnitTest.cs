@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SimpleMathParser;
 
 namespace UnitTestProject
 {
@@ -7,9 +8,11 @@ namespace UnitTestProject
     public class UnitTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void EmptyExpressionHasZeroTokens()
         {
-            Assert.AreEqual(0, 0);
+            var expression = new MathExpression("");
+            int length = expression.tokens.Length;
+            Assert.AreEqual(length, 0); 
         }
     }
 }

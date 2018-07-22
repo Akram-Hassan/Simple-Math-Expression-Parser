@@ -1,0 +1,1 @@
+c:\users\akram\documents\visual studio 2015\Projects\Math Expression Parser\Math Expression Parser\bin\Debug\Math Expression Parser.exe.config

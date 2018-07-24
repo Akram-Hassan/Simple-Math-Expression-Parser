@@ -1,4 +1,7 @@
-﻿namespace SimpleMathParser
+﻿using System.Linq;
+using System.Collections.Generic;
+
+namespace SimpleMathParser
 {
     public class MathExpression
     {
@@ -9,9 +12,13 @@
             this.text = text;
         }
 
-        public string[] tokens {
+        public List<string> tokens {
             get {
-                return new string[0];
+                var tokens = new List<string>();
+                if (!string.IsNullOrEmpty(text))
+                    tokens = text.Split(new char[] { '+' , '-' , '*' , '/' })
+                                .ToList();
+                return tokens;
             }
         }
     }

@@ -1,7 +1,7 @@
 ﻿namespace SimpleMathParser
 {
     public enum Operator {
-        Add, Subtract, Multiple, Divide
+        Add, Subtract, Multiply, Divide
     }
 
     public struct MathOperation

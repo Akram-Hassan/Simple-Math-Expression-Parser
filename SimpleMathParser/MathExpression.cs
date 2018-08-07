@@ -69,13 +69,30 @@ namespace SimpleMathParser
                     mathOperator = Operator.Subtract;
                     break;
                 case "*":
-                    mathOperator = Operator.Multiple;
+                    mathOperator = Operator.Multiply;
                     break;
                 case "/":
                     mathOperator = Operator.Divide;
                     break;
             }
             return mathOperator;
+        }
+
+        public StringBuilder createProgramInstructions()
+        {
+            var result = new StringBuilder();
+
+            result.AppendLine($"PUSH {FirstValue}");
+
+            foreach (var operation in Operations)
+            {
+                result.AppendLine($"PUSH {operation.Value}");
+                result.AppendLine($"{operation.Operator.ToString().ToUpper()}");
+            }
+
+            result.AppendLine($"PRINT");
+
+            return result;
         }
     }
 }

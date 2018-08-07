@@ -4,6 +4,7 @@ using SimpleMathParser;
 using System.Collections.Generic;
 using NUnit.Framework;
 using System.Linq;
+using System.Text;
 
 namespace UnitTestProject
 {
@@ -59,9 +60,48 @@ namespace UnitTestProject
                 new MathOperation(Operator.Divide, 8),
                 new MathOperation(Operator.Subtract, 2),
                 new MathOperation(Operator.Add, 9),
-                new MathOperation(Operator.Multiple, 300)
+                new MathOperation(Operator.Multiply, 300)
             };
             CollectionAssert.AreEquivalent(expression.Operations, operations);
+        }
+
+        [Test]
+        public void Test_Printing_Instructions_For_Single_Value() {
+            var expression = new MathExpression("13");
+            var instructions = new StringBuilder();
+            instructions.AppendLine("PUSH 13");
+            instructions.AppendLine("PRINT");
+
+            StringAssert.AreEqualIgnoringCase(
+                expression.createProgramInstructions().ToString(), 
+                instructions.ToString()
+            );
+        }
+
+        [Test]
+        public void Test_Printing_Instructions_For_Long_Expressions()
+        {
+            var expression = new MathExpression("7/2+14*9-5-15*500");
+            var instructions = new StringBuilder();
+            instructions.AppendLine("PUSH 7");
+            instructions.AppendLine("PUSH 2");
+            instructions.AppendLine("DIVIDE");
+            instructions.AppendLine("PUSH 14");
+            instructions.AppendLine("ADD");
+            instructions.AppendLine("PUSH 9");
+            instructions.AppendLine("MULTIPLY");
+            instructions.AppendLine("PUSH 5");
+            instructions.AppendLine("SUBTRACT");
+            instructions.AppendLine("PUSH 15");
+            instructions.AppendLine("SUBTRACT");
+            instructions.AppendLine("PUSH 500");
+            instructions.AppendLine("MULTIPLY");
+            instructions.AppendLine("PRINT");
+
+            StringAssert.AreEqualIgnoringCase(
+                expression.createProgramInstructions().ToString(),
+                instructions.ToString()
+            );
         }
     }
 }

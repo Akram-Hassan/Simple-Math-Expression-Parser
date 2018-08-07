@@ -28,5 +28,14 @@ namespace UnitTestProject
             var expression = new MathExpression("1");
             Assert.IsTrue(expression.Valid);
         }
+
+        [TestMethod]
+        public void SingleValueExpressionHasTheSameValue()
+        {
+            double value = 500.0;
+            var expression = new MathExpression("500");
+
+            Assert.AreEqual(expression.Evaluate(), value);
+        }
     }
 }

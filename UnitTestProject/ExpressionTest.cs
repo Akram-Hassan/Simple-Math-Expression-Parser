@@ -10,14 +10,14 @@ namespace UnitTestProject
     public class ExpressionTest
     {
         [Test]
-        public void TestExpressionWithSingleValue()
+        public void Test_Expression_With_Single_Value()
         {
             var expression = new MathExpression("10");
             Assert.AreEqual(expression.FirstValue, 10.0);
         }
 
         [Test]
-        public void CreatingInvalid_ExpressionGeneratesException() {
+        public void Creating_Invalid_Expression_Generates_Exception() {
             Assert.Throws<ExpressionEvaluationException>(
                     () => new MathExpression("1abc")
             );

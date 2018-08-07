@@ -10,7 +10,7 @@ namespace UnitTestProject
     public class MathOperationTest
     {
         [Test]
-        public void CreateMathOperation()
+        public void Create_Math_Operation()
         {
             int value = 10;
             Operator mathOperator = Operator.Add;

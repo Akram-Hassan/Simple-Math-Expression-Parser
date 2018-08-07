@@ -44,9 +44,24 @@ namespace UnitTestProject
         {
             var expression = new MathExpression("10-3");
             Assert.AreEqual(expression.FirstValue, 10);
-            var operation = new MathOperation(3, Operator.Subtract);
+            var operation = new MathOperation(Operator.Subtract, 3);
             Assert.AreEqual(expression.Operations.FirstOrDefault(), operation);
         }
 
+        [Test]
+        public void Test_Expression_With_Multiple_Operations()
+        {
+            var expression = new MathExpression("5+3/8-2+9*300");
+            Assert.AreEqual(expression.FirstValue, 5);
+
+            var operations =new MathOperation[] {
+                new MathOperation(Operator.Add, 3),
+                new MathOperation(Operator.Divide, 8),
+                new MathOperation(Operator.Subtract, 2),
+                new MathOperation(Operator.Add, 9),
+                new MathOperation(Operator.Multiple, 300)
+            };
+            CollectionAssert.AreEquivalent(expression.Operations, operations);
+        }
     }
 }

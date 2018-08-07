@@ -42,13 +42,13 @@ namespace SimpleMathParser
                 foreach (var operationCapture in ((Group)operationsGroup).Captures)
                 {
                     string mathOperatorString = operationCapture.ToString().Substring(0, 1);
-                    string value = operationCapture.ToString().Substring(0);
+                    string value = operationCapture.ToString().Substring(1);
 
                     Operator mathOperator = getOperator(mathOperatorString);
                     int operand;
                     int.TryParse(value, out operand);
                     MathOperation operation = 
-                        new MathOperation(Math.Abs(operand), mathOperator);
+                        new MathOperation(mathOperator, Math.Abs(operand));
 
                     operations.Add(operation);
                 }

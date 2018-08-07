@@ -15,7 +15,7 @@ namespace UnitTestProject
             int value = 10;
             Operator mathOperator = Operator.Add;
             var mathOperation = 
-                new MathOperation(value, mathOperator);
+                new MathOperation(mathOperator, value);
 
             Assert.AreEqual(mathOperation.Value, 10);
             Assert.AreEqual(mathOperation.Operator, mathOperator);

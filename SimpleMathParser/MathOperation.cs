@@ -12,7 +12,7 @@
         public int Value => this.value;
         public Operator Operator => this.mathOperator;
 
-        public MathOperation(int value, Operator mathOperator)
+        public MathOperation(Operator mathOperator, int value)
         {
             this.value = value;
             this.mathOperator = mathOperator;

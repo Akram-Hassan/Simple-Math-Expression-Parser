@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace UnitTestProject
 {
     [TestClass]
-    public class UnitTest
+    public class ExpressionTest
     {
         [TestMethod]
         public void EmptyExpressionHasZeroTokens()

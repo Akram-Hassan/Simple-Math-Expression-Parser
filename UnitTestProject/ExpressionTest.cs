@@ -45,5 +45,13 @@ namespace UnitTestProject
             var expression = new MathExpression("10a");
             Assert.Throws<EvaluationException>(() => expression.Evaluate());
         }
+
+        [Test]
+        public void TestExpressionWithSingleValue()
+        {
+            var expression = new MathExpression("10");
+            Assert.AreEqual(expression.Evaluate(), 10.0);
+            Assert.AreEqual(expression.FirstValue, 10.0);
+        }
     }
 }

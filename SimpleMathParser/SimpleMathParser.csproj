@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="EvaluationException.cs" />
     <Compile Include="MathExpression.cs" />
+    <Compile Include="MathOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

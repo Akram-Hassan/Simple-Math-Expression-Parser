@@ -30,5 +30,11 @@ namespace SimpleMathParser
             else
                 throw new EvaluationException($"Invalid expression {text}");
         }
+
+        public double FirstValue {
+            get {
+                return Evaluate();
+            }
+        }
     }
 }

@@ -13,27 +13,21 @@ namespace SimpleMathParser
 
         public MathExpression(string text)
         {
+            if (!Regex.IsMatch(text, pattern))
+            {
+                throw new ExpressionEvaluationException($"{text} is invalid expression");
+            }
             this.text = text;
         }
 
-        public bool Valid {
+        public int FirstValue {
             get {
-                return Regex.IsMatch(text, pattern);
-            }
-        }
+                Match firstMatch = Regex.Matches(text, pattern)[0];
+                Group firstNumberGroup = firstMatch.Groups[1];
 
-        public double Evaluate()
-        {
-            double result;
-            if (double.TryParse(text, out result))
+                int result;
+                int.TryParse(firstNumberGroup.ToString(), out result);
                 return result;
-            else
-                throw new EvaluationException($"Invalid expression {text}");
-        }
-
-        public double FirstValue {
-            get {
-                return Evaluate();
             }
         }
     }

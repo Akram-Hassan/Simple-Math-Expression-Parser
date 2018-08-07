@@ -2,18 +2,18 @@
 
 namespace SimpleMathParser
 {
-    public class EvaluationException : Exception
+    public class ExpressionEvaluationException : Exception
     {
-        public EvaluationException()
+        public ExpressionEvaluationException()
         {
         }
 
-        public EvaluationException(string message)
+        public ExpressionEvaluationException(string message)
         : base(message)
         {
         }
 
-        public EvaluationException(string message, Exception inner)
+        public ExpressionEvaluationException(string message, Exception inner)
         : base(message, inner)
         {
         }

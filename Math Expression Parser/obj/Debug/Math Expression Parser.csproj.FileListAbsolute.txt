@@ -1,8 +1,6 @@
-c:\users\akram\documents\visual studio 2015\Projects\Math Expression Parser\Math Expression Parser\bin\Debug\Math Expression Parser.exe.config
 C:\Users\Akram\documents\visual studio 2015\Projects\Math Expression Parser\Math Expression Parser\bin\Debug\Math Expression Parser.exe
-C:\Users\Akram\documents\visual studio 2015\Projects\Math Expression Parser\Math Expression Parser\bin\Debug\Math Expression Parser.pdb
+C:\Users\Akram\documents\visual studio 2015\Projects\Math Expression Parser\Math Expression Parser\bin\Debug\SimpleMathParser.dll
+C:\Users\Akram\documents\visual studio 2015\Projects\Math Expression Parser\Math Expression Parser\bin\Debug\SimpleMathParser.pdb
 C:\Users\Akram\documents\visual studio 2015\Projects\Math Expression Parser\Math Expression Parser\obj\Debug\Math Expression Parser.csprojResolveAssemblyReference.cache
 C:\Users\Akram\documents\visual studio 2015\Projects\Math Expression Parser\Math Expression Parser\obj\Debug\Math Expression Parser.exe
 C:\Users\Akram\documents\visual studio 2015\Projects\Math Expression Parser\Math Expression Parser\obj\Debug\Math Expression Parser.pdb
-C:\Users\Akram\documents\visual studio 2015\Projects\Math Expression Parser\Math Expression Parser\bin\Debug\SimpleMathParser.dll
-C:\Users\Akram\documents\visual studio 2015\Projects\Math Expression Parser\Math Expression Parser\bin\Debug\SimpleMathParser.pdb

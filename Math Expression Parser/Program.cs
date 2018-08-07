@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleMathParser;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,22 @@ namespace Math_Expression_Parser
     {
         static void Main(string[] args)
         {
-
+            Console.WriteLine("Welcome");
+            while (true)
+            {
+                Console.WriteLine("Enter your math expressions:");
+                string expressionText = Console.ReadLine();
+                MathExpression expression;
+                try
+                {
+                    expression = new MathExpression(expressionText);
+                    Console.WriteLine(expression.createProgramInstructions());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid Expression");
+                }
+            }
         }
     }
 }

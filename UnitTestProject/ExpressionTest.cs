@@ -11,8 +11,22 @@ namespace UnitTestProject
         [TestMethod]
         public void EmptyExpressionIsNotValid()
         {
-            var expression = new MathExpression("123");
+            var expression = new MathExpression("");
             Assert.IsFalse(expression.Valid);
+        }
+
+        [TestMethod]
+        public void TestExpressionWithInValidPattern()
+        {
+            var expression = new MathExpression("abc");
+            Assert.IsFalse(expression.Valid);
+        }
+
+        [TestMethod]
+        public void SingleValueExpressionIsValid()
+        {
+            var expression = new MathExpression("1");
+            Assert.IsTrue(expression.Valid);
         }
     }
 }

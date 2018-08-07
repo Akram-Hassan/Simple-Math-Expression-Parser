@@ -25,8 +25,10 @@ namespace SimpleMathParser
         public double Evaluate()
         {
             double result;
-            double.TryParse(text, out result);
-            return result;
+            if (double.TryParse(text, out result))
+                return result;
+            else
+                throw new EvaluationException($"Invalid expression {text}");
         }
     }
 }

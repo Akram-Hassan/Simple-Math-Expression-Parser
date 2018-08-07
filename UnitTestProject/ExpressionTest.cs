@@ -1,41 +1,49 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit;
 using SimpleMathParser;
 using System.Collections.Generic;
+using NUnit.Framework;
 
 namespace UnitTestProject
 {
-    [TestClass]
+    [TestFixture]
     public class ExpressionTest
     {
-        [TestMethod]
+        [Test]
         public void EmptyExpressionIsNotValid()
         {
             var expression = new MathExpression("");
             Assert.IsFalse(expression.Valid);
         }
 
-        [TestMethod]
+        [Test]
         public void TestExpressionWithInValidPattern()
         {
             var expression = new MathExpression("abc");
             Assert.IsFalse(expression.Valid);
         }
 
-        [TestMethod]
+        [Test]
         public void SingleValueExpressionIsValid()
         {
             var expression = new MathExpression("1");
             Assert.IsTrue(expression.Valid);
         }
 
-        [TestMethod]
+        [Test]
         public void SingleValueExpressionHasTheSameValue()
         {
             double value = 500.0;
             var expression = new MathExpression("500");
 
             Assert.AreEqual(expression.Evaluate(), value);
+        }
+
+        [Test]
+        public void EvaluatingInvalidExpressionThrowsException()
+        {
+            var expression = new MathExpression("10a");
+            Assert.Throws<EvaluationException>(() => expression.Evaluate());
         }
     }
 }

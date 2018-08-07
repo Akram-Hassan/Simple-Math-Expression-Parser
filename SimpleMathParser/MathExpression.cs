@@ -12,13 +12,9 @@ namespace SimpleMathParser
             this.text = text;
         }
 
-        public List<string> tokens {
+        public bool Valid {
             get {
-                var tokens = new List<string>();
-                if (!string.IsNullOrEmpty(text))
-                    tokens = text.Split(new char[] { '+' , '-' , '*' , '/' })
-                                .ToList();
-                return tokens;
+                return false;
             }
         }
     }

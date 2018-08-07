@@ -54,7 +54,6 @@
   <ItemGroup>
     <Compile Include="ExpressionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TokenTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SimpleMathParser\SimpleMathParser.csproj">

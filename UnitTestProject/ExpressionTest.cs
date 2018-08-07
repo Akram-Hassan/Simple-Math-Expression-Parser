@@ -9,27 +9,10 @@ namespace UnitTestProject
     public class ExpressionTest
     {
         [TestMethod]
-        public void EmptyExpressionHasZeroTokens()
-        {
-            var expression = new MathExpression("");
-            int length = expression.tokens.Capacity;
-            Assert.AreEqual(length, 0); 
-        }
-
-        [TestMethod]
-        public void SingleDigitExpressionHasSingleTokenWithSameValue()
-        {
-            var expression = new MathExpression("1");
-            var tokens = new List<String> { "1" };
-            CollectionAssert.AreEquivalent(expression.tokens, tokens);
-        }
-
-        [TestMethod]
-        public void SingleNumberExpressionHasSingleTokenWithSameValue()
+        public void EmptyExpressionIsNotValid()
         {
             var expression = new MathExpression("123");
-            var tokens = new List<String> { "123" };
-            CollectionAssert.AreEquivalent(expression.tokens, tokens);
+            Assert.IsFalse(expression.Valid);
         }
     }
 }

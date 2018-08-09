@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math Expression Parser", "Math Expression Parser\Math Expression Parser.csproj", "{974897EF-3C89-495C-91C2-6B5DA1625903}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Math Expression Parser\Demo.csproj", "{974897EF-3C89-495C-91C2-6B5DA1625903}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMathParser", "SimpleMathParser\SimpleMathParser.csproj", "{E5535FC1-F709-4E70-A534-F89FB2294EEE}"
 EndProject
